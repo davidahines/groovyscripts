@@ -1,0 +1,42 @@
+board = [[null,null,null],[null,null,null],[null,null,null]]
+Random random = new Random()
+
+isXFirst = random.nextInt(2)
+isXTurn = 0;
+if(isXFirst == 1){
+  isXTurn = 1;
+  println "X goes first."
+}else{
+  println "Y goes first."
+}
+moves = 0
+max = 9
+while(moves < 9){
+  moves++
+  printBoard()
+  if(isXTurn){
+     println "It's x's turn."
+  }else{
+     println "It's y's turn."
+  }
+  
+  row = System.console().readLine 'Enter row (starts with 0)'
+  column = System.console().readLine 'Enter column (starts with 0)'
+}
+
+def printBoard(){
+      // iterate over board
+  for(int i = 0; i < 3; i++){
+      for(int j = 0; j < 3; j++){
+          if(j %2 == 0){
+             print "|"
+             }
+          print "${board[i][j]}"
+          if(j %2 == 0){
+             print "|"
+             }
+          println   
+      }
+   }
+}
+  
